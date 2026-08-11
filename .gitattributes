@@ -1,0 +1,17 @@
+/public/assets/videos/AI.mp4 filter=lfs diff=lfs merge=lfs -text
+/public/assets/videos/Aerospace.mp4 filter=lfs diff=lfs merge=lfs -text
+/public/assets/videos/AirCab.mp4 filter=lfs diff=lfs merge=lfs -text
+/public/assets/videos/Amusement.mp4 filter=lfs diff=lfs merge=lfs -text
+/public/assets/videos/ArtsEdu.mp4 filter=lfs diff=lfs merge=lfs -text
+/public/assets/videos/Battery.mp4 filter=lfs diff=lfs merge=lfs -text
+/public/assets/videos/Biofuel.mp4 filter=lfs diff=lfs merge=lfs -text
+/public/assets/videos/Biogas.mp4 filter=lfs diff=lfs merge=lfs -text
+/public/assets/videos/Biomass.mp4 filter=lfs diff=lfs merge=lfs -text
+/public/assets/videos/BroadcastEdu.mp4 filter=lfs diff=lfs merge=lfs -text
+/public/assets/videos/CNG.mp4 filter=lfs diff=lfs merge=lfs -text
+/public/assets/videos/CancerCare.mp4 filter=lfs diff=lfs merge=lfs -text
+/public/assets/videos/Cell.mp4 filter=lfs diff=lfs merge=lfs -text
+/public/assets/videos/Cruise.mp4 filter=lfs diff=lfs merge=lfs -text
+/public/assets/videos/Cryptocurrency.mp4 filter=lfs diff=lfs merge=lfs -text
+/public/assets/videos/Drone.mp4 filter=lfs diff=lfs merge=lfs -text
+/public/assets/videos/Electrolyzer.mp4 filter=lfs diff=lfs merge=lfs -text
