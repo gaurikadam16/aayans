@@ -1,0 +1,303 @@
+/* --- Root Variables --- */
+:root {
+  --primary-maroon: #7a1f1f;
+  --primary-blue: #1a4a8e;
+  --text-dark: #0f172a;
+  --text-muted: #64748b;
+  --bg-light: #f8fafc;
+  --white: #ffffff;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --- Base Styles --- */
+.gallery-page-wrapper {
+  background-color: var(--bg-light);
+  min-height: 100vh;
+}
+/* --- Namespaced Hero Section --- */
+
+.gallery-hero-section {
+  position: relative;
+  height: 65vh; 
+  min-height: 400px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;    /* Keeps text centered vertically */
+  justify-content: center; /* Keeps text centered horizontally */
+  z-index: 1;
+}
+
+.gallery-hero-text-box {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  color: white;
+  padding: 0 20px;
+}
+
+.gallery-hero-title {
+  font-size: clamp(2rem, 6vw, 4rem);
+  font-weight: 900;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.gallery-hero-accent-line {
+  width: 60px;
+  height: 4px;
+  background: #7a1f1f;
+  margin: 15px auto;
+}
+
+/* --- Perfect Mobile Media Query (Under 768px) --- */
+@media (max-width: 768px) {
+  .gallery-hero-section {
+    /* Adjusting height for mobile; flexbox above keeps text in the dead center */
+    height: 45vh; 
+    min-height: 350px;
+  }
+
+  .gallery-hero-title {
+    /* Reduced letter spacing so text doesn't break poorly on narrow screens */
+    letter-spacing: 3px;
+    line-height: 1.1;
+  }
+
+  .gallery-hero-accent-line {
+    width: 40px;
+    height: 3px;
+    margin: 12px auto;
+  }
+
+  .gallery-hero-text-box {
+    /* Ensures no extra padding or margin pushes the text away from the center */
+    padding: 0 15px;
+    margin: 0px; 
+  }
+}
+/* --- Filter Area (Vertical Column Layout) --- */
+.main-content-area {
+  max-width: 12 00px;
+  margin: 0 auto;
+  padding: 3rem 5%;
+}
+
+/* 1. This container stacks the Year group on top of the Category group */
+.filter-container {
+  display: flex !important;
+  flex-direction: column !important; 
+  gap: 3rem;                /* Space between Year section and Category section */
+  margin-bottom: 4rem;
+  align-items: center;      /* Centers both sections on the page */
+  width: 100%;
+}
+
+/* 2. This group stacks the Label on top of the Button Row */
+.filter-group {
+  display: flex !important;
+  flex-direction: column !important; 
+  align-items: center;      /* Centers label and buttons relative to each other */
+  width: 100%;
+  max-width: 800px;
+}
+
+.filter-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 1rem;      /* Gap between label and buttons */
+  letter-spacing: 2px;
+  display: block;
+}
+
+/* 3. This row holds the buttons side-by-side */
+.filter-row {
+  display: flex;
+  flex-wrap: wrap;          /* Allows wrapping on mobile */
+  justify-content: center;
+  gap: 15px;                /* Space between individual buttons */
+  width: 100%;
+}
+
+/* --- Buttons --- */
+.btn-year, .btn-type {
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: var(--transition);
+  border: 2px solid;
+  background: var(--white);
+  min-width: 110px;
+}
+
+/* Specific Colors for Year */
+.btn-year {
+  color: var(--primary-maroon);
+  border-color: var(--primary-maroon);
+}
+.btn-year.active, .btn-year:hover {
+  background: var(--primary-maroon);
+  color: var(--white);
+  box-shadow: 0 4px 12px rgba(122, 31, 31, 0.2);
+}
+
+/* Specific Colors for Category */
+.btn-type {
+  color: var(--primary-blue);
+  border-color: #e2e8f0;
+}
+.btn-type.active, .btn-type:hover {
+  background: var(--primary-blue);
+  color: var(--white);
+  border-color: var(--primary-blue);
+}
+
+
+/* --- Grid System --- */
+.items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+/* Information Card (Full Width) */
+.info-card-full {
+  grid-column: 1 / -1;
+  background: var(--white);
+  border-radius: 16px;
+  border-left: 8px solid var(--primary-blue);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  overflow: hidden;
+}
+
+.info-card-content {
+  padding: 3rem;
+}
+
+.meta-badge {
+  color: var(--primary-blue);
+  font-weight: 800;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+.info-card-title {
+  font-size: 1.75rem;
+  margin: 1rem 0;
+  color: var(--text-dark);
+}
+
+.info-card-text {
+  line-height: 1.8;
+  color: #475569;
+  font-size: 1.05rem;
+  text-align: justify;
+}
+
+.info-card-footer {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #f1f5f9;
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+/* Media Cards */
+.media-card {
+  background: var(--white);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+  transition: var(--transition);
+}
+
+.media-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.media-header {
+  height: 240px;
+  position: relative;
+  background: #cbd5e1;
+}
+
+.media-header img, .media-header video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.type-tag {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--primary-maroon);
+  color: white;
+  padding: 4px 10px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  border-radius: 4px;
+}
+
+.media-body {
+  padding: 1.5rem;
+}
+
+.year-tag {
+  color: var(--primary-blue);
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+.media-body h4 {
+  margin: 0.5rem 0 0;
+  font-size: 1.15rem;
+  color: var(--text-dark);
+}
+
+/* --- Empty State --- */
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 5rem;
+  color: var(--text-muted);
+  font-size: 1.2rem;
+}
+
+/* --- Responsive Adjustments --- */
+
+@media (max-width: 768px) {
+  .hero-section { height: 40vh; }
+  
+  .filter-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 buttons per row */
+  }
+
+  .info-card-content {
+    padding: 1.5rem;
+  }
+
+  .info-card-title {
+    font-size: 1.4rem;
+  }
+
+  .items-grid {
+    grid-template-columns: 1fr; /* Single column for images */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title { font-size: 2.5rem; }
+  
+  .filter-row {
+    grid-template-columns: 1fr; /* Single column buttons on tiny screens */
+  }
+}

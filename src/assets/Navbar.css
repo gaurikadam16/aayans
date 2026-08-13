@@ -1,0 +1,321 @@
+/* =========================================
+   1. CORE RESET & BASE STYLES
+   ========================================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+.nav-container {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0; 
+  z-index: 9999;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-initial {
+  background: #ffffff;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+}
+
+.nav-scrolled {
+  padding: 12px 0;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 10px 30px rgba(99, 36, 33, 0.1); 
+}
+
+.nav-wrapper {
+  width: 90%;
+  max-width: 1400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo img {
+  height: 55px; 
+  width: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.nav-logo:hover img {
+  transform: scale(1.02);
+}
+
+/* =========================================
+   2. NAVIGATION LINKS
+   ========================================= */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0; /* Gap removed to eliminate space before CTA button */
+  flex-wrap: nowrap; 
+}
+
+/* Added spacing specifically for links to avoid affecting the CTA button */
+.nav-link-item, .dropdown-wrapper {
+  margin-right: 25px; 
+}
+
+.nav-link-item {
+  text-decoration: none;
+  color: #000000;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+  position: relative;
+  background: none;
+  border: none;
+  white-space: nowrap; 
+}
+
+.nav-link-item::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #632421; 
+  transition: 0.3s;
+}
+
+.nav-link-item:hover::after {
+  width: 100%;
+}
+
+.nav-link-item:hover {
+  color: #632421 !important;
+}
+
+.drop-icon {
+  font-size: 8px;
+  color: #000000;
+  transition: 0.3s;
+}
+
+.nav-link-item:hover .drop-icon {
+  transform: rotate(180deg);
+  color: #632421;
+}
+
+.nav-cta-btn {
+  background: #632421; 
+  color: #ffffff !important;
+  padding: 12px 28px;
+  border-radius: 2px;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: 0.4s;
+  border: 1px solid #632421;
+  white-space: nowrap;
+  margin-left: 5px; /* Minimal space between link and button */
+}
+
+.nav-cta-btn:hover {
+  background: #000000; 
+  border-color: #000000;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* =========================================
+   3. DROPDOWNS & MEGA MENU
+   ========================================= */
+.dropdown-wrapper {
+  position: relative;
+  padding: 10px 0;
+}
+
+.mega-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 95vw;
+  max-width: 1300px;
+  background: #ffffff;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+  border-top: 4px solid #632421; 
+  padding: 40px 20px;
+  z-index: 1000;
+  border-radius: 0 0 8px 8px;
+  animation: slideUp 0.4s forwards;
+}
+
+.mega-grid {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.mega-col {
+  flex: 1;
+  padding: 0 15px;
+  border-right: 1px solid #f0f0f0;
+}
+
+.mega-col:last-child {
+  border-right: none;
+}
+
+.standard-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 280px;
+  background: #ffffff;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+  border-top: 4px solid #632421;
+  padding: 15px 0;
+  border-radius: 0 0 8px 8px;
+  display: flex;
+  flex-direction: column;
+  animation: slideUpSimple 0.4s forwards;
+}
+
+.standard-dropdown a {
+  padding: 12px 25px;
+  color: #000000 !important;
+  font-weight: 600;
+  font-size: 14px;
+  display: block;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.standard-dropdown a:hover {
+  background: #F9F7F5;
+  color: #632421 !important;
+  padding-left: 30px;
+}
+
+.col-main-heading {
+  color: #632421;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #f9f7f5;
+}
+
+.item-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #000000;
+  padding: 8px 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.active-label { color: #632421; }
+
+.sub-menu-list {
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+  margin-bottom: 10px;
+}
+
+.sub-menu-list a {
+  color: #555 !important;
+  font-size: 12px;
+  padding: 4px 0;
+  text-decoration: none;
+}
+
+.sub-menu-list a:hover {
+  color: #632421 !important;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translate(-50%, 15px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+@keyframes slideUpSimple {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================
+   4. MOBILE STYLES
+   ========================================= */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.menu-toggle .bar {
+  width: 25px; 
+  height: 3px; 
+  background-color: #000000;
+  transition: 0.3s;
+}
+
+@media (max-width: 1100px) {
+  .menu-toggle { display: flex; }
+  .nav-links {
+    position: fixed; 
+    top: 0; 
+    right: -100%;
+    width: 80%; 
+    height: 100vh;
+    background: #ffffff; 
+    flex-direction: column;
+    padding: 100px 30px; 
+    transition: 0.4s;
+    overflow-y: auto;
+    align-items: flex-start;
+    gap: 20px;
+    z-index: 10000; 
+  }
+  
+  /* Reset margins for mobile layout */
+  .nav-link-item, .dropdown-wrapper {
+    margin-right: 0;
+  }
+  .nav-cta-btn {
+    margin-left: 0;
+  }
+
+  .nav-links.active { right: 0; }
+  .mega-menu, .standard-dropdown {
+    position: static; transform: none; width: 100%;
+    box-shadow: none; border: none; padding: 10px;
+    background: #fafafa; animation: none; opacity: 1;
+  }
+  .mega-grid { flex-direction: column; }
+  .mega-col { border: none; padding-bottom: 20px; }
+}
+
+.nav-overlay {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5); visibility: hidden; opacity: 0; transition: 0.3s;
+  z-index: 9998;
+}
+.nav-overlay.show { visibility: visible; opacity: 1; }

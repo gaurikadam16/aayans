@@ -1,3 +1,12 @@
+*.avi filter=lfs diff=lfs merge=lfs -text
+*.mkv filter=lfs diff=lfs merge=lfs -text
+*.png filter=lfs diff=lfs merge=lfs -text
+*.jpg filter=lfs diff=lfs merge=lfs -text
+*.gif filter=lfs diff=lfs merge=lfs -text
+*.mp4 filter=lfs diff=lfs merge=lfs -text
+*.mov filter=lfs diff=lfs merge=lfs -text
+*.jpeg filter=lfs diff=lfs merge=lfs -text
+*.webp filter=lfs diff=lfs merge=lfs -text
 /public/assets/videos/AI.mp4 filter=lfs diff=lfs merge=lfs -text
 /public/assets/videos/Aerospace.mp4 filter=lfs diff=lfs merge=lfs -text
 /public/assets/videos/AirCab.mp4 filter=lfs diff=lfs merge=lfs -text
@@ -15,3 +24,4 @@
 /public/assets/videos/Cryptocurrency.mp4 filter=lfs diff=lfs merge=lfs -text
 /public/assets/videos/Drone.mp4 filter=lfs diff=lfs merge=lfs -text
 /public/assets/videos/Electrolyzer.mp4 filter=lfs diff=lfs merge=lfs -text
+/node_modules/.cache/default-development/0.pack filter=lfs diff=lfs merge=lfs -text

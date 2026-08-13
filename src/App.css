@@ -1,0 +1,24 @@
+/* index.css - CLEAN CORPORATE BASE */
+:root {
+  --corp-navy: #001a33;
+  --corp-blue: #00a8ff;
+}
+
+* { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  background-color: #fff;
+}
+
+/* Fix for the Hero Image so it doesn't hide the Navbar */
+section {
+  position: relative;
+  width: 100%;
+}

@@ -1,0 +1,216 @@
+/* Main Wrapper - High z-index to stay above other elements */
+.unique-contact-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 140px 20px 80px; /* Large top padding to clear fixed Navbars */
+  box-sizing: border-box;
+}
+
+/* The Main Glass/Split Card */
+.glass-container {
+  display: flex;
+  background: #ffffff;
+  width: 100%;
+  max-width: 1000px;
+  min-height: 600px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Left Side: Corporate Info Panel */
+.contact-info-panel {
+  flex: 1;
+  background: #5c2626; /* Aaryans Theme Maroon */
+  color: #ffffff;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.contact-info-panel h3 {
+  font-size: 32px;
+  margin-bottom: 25px;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 1px;
+}
+
+.contact-info-panel p {
+  line-height: 1.6;
+  margin-bottom: 40px;
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+.info-item {
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 15px;
+}
+
+.info-item span:first-child {
+  font-size: 20px;
+}
+
+/* Right Side: Form Panel */
+.contact-form-panel {
+  flex: 1.5;
+  padding: 60px;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+.panel-title {
+  margin-bottom: 45px;
+  color: #333;
+  font-size: 28px;
+  font-weight: 700;
+  position: relative;
+}
+
+.panel-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 50px;
+  height: 3px;
+  background: #5c2626;
+}
+
+/* Modern Floating Label Input Groups */
+.modern-input-group {
+  position: relative;
+  margin-bottom: 35px;
+}
+
+.modern-input-group input, 
+.modern-input-group textarea {
+  width: 100%;
+  padding: 12px 0;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  outline: none;
+  font-size: 16px;
+  color: #333;
+  background: transparent;
+  transition: border-color 0.3s ease;
+  display: block;
+}
+
+.modern-input-group label {
+  position: absolute;
+  top: 12px;
+  left: 0;
+  color: #999;
+  pointer-events: none;
+  transition: 0.3s ease all;
+  font-size: 16px;
+}
+
+/* Animation for the floating label */
+.modern-input-group input:focus ~ label,
+.modern-input-group input:not(:placeholder-shown) ~ label,
+.modern-input-group textarea:focus ~ label,
+.modern-input-group textarea:not(:placeholder-shown) ~ label {
+  top: -20px;
+  font-size: 13px;
+  color: #5c2626;
+  font-weight: 600;
+}
+
+/* Animated Underline Bar */
+.modern-input-group .bar {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.modern-input-group .bar:before {
+  content: '';
+  height: 2.5px;
+  width: 0;
+  bottom: 0px;
+  position: absolute;
+  background: #5c2626;
+  transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.modern-input-group input:focus ~ .bar:before,
+.modern-input-group textarea:focus ~ .bar:before {
+  width: 100%;
+}
+
+/* Unique Submit Button */
+.unique-submit-btn {
+  background-color: #5c2626;
+  color: #ffffff;
+  padding: 16px 50px;
+  border: none;
+  border-radius: 50px;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(92, 38, 38, 0.3);
+  transition: all 0.3s ease;
+  width: fit-content;
+  align-self: center;
+  margin-top: 15px;
+}
+
+.unique-submit-btn:hover {
+  background-color: #451a1a;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(92, 38, 38, 0.4);
+}
+
+.unique-submit-btn:active {
+  transform: translateY(-1px);
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 850px) {
+  .glass-container {
+    flex-direction: column;
+    margin: 20px 0;
+  }
+  
+  .contact-info-panel {
+    padding: 40px;
+    text-align: center;
+    align-items: center;
+  }
+
+  .contact-form-panel {
+    padding: 40px 30px;
+  }
+  
+  .unique-contact-wrapper {
+    padding-top: 100px;
+  }
+}
+
+/* Fix for dark browser defaults */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
