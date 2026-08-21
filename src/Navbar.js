@@ -140,7 +140,7 @@ const Navbar = () => {
       <nav className={`nav-container ${scrolled ? 'nav-scrolled' : 'nav-initial'}`}>
         <div className="nav-wrapper">
           <Link to="/" className="nav-logo" onClick={closeMenu}>
-            <img src="/images/Aaryans_logo_new_01.png" alt="Aaryans Group" />
+            <img src="aayans/public/images/Aaryans_logo_new_01.png" alt="Aaryans Group" />
           </Link>
           
           <div className={`menu-toggle ${menuOpen ? 'is-active' : ''}`} onClick={() => setMenuOpen(!menuOpen)}>
